@@ -1,0 +1,26 @@
+# IDE settings (project-wide)
+.idea/
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*.swo
+.project
+.pydevproject
+.settings/
+
+# Environment variables
+.env
+*.override.envrc
+
+# Python
+.venv/
+__pycache__/
+
+# Node.js
+node_modules/
+
+# Environment files
+*.envrc
+!*.envrc.example
