@@ -29,7 +29,11 @@ defmodule Lux.Lenses.Twitter.Tweets.DeleteTweet do
       required: ["id"]
     }
 
+  @type delete_response :: %{deleted: boolean()}
+  @type error_response :: %{errors: list(map())}
+
   @impl true
+  @spec after_focus(map()) :: {:ok, delete_response()} | {:error, error_response()}
   def after_focus(%{"data" => %{"deleted" => true}}) do
     {:ok, %{deleted: true}}
   end

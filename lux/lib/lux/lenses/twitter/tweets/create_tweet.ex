@@ -34,7 +34,15 @@ defmodule Lux.Lenses.Twitter.Tweets.CreateTweet do
       required: ["text"]
     }
 
+  @type tweet_response :: %{
+    id: String.t(),
+    text: String.t(),
+    created_at: String.t()
+  }
+  @type error_response :: %{errors: list(map())}
+
   @impl true
+  @spec after_focus(map()) :: {:ok, tweet_response()} | {:error, error_response()}
   def after_focus(%{"data" => data}) do
     {:ok, %{
       id: data["id"],
